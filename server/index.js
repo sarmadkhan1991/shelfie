@@ -7,6 +7,13 @@ app.use(express.json());
 
 const { SERVICE_PORT, CONNECTION_STRING } = process.env;
 
+massive(CONNECTION_STRING).then(db => {
+    console.log('database connected!');
+    app.set('db', db);
+})
+
+app.get('/api/inventory', pc.getAll);
+
 
 
 
