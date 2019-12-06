@@ -10,7 +10,10 @@ class App extends React.Component {
     super (props) 
 
     this.state = {
-      inventory: []
+      inventory: [],
+      name: '',
+      price: 0,
+      img_url: '',
     }
   }
 
@@ -20,7 +23,6 @@ class App extends React.Component {
 
   getAllProducts(){
     axios.get('/api/inventory').then(res => {
-      console.log(res);
       this.setState({
         inventory: res.data
       })
@@ -31,9 +33,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <div className='header'>
           <Header />
-          <Dashboard inventory={this.state.inventory}/>
+        </div>
+        <div className='main-container'>
+          <Dashboard inventory={this.state.inventory} />
           <Form />
+        </div>
       </div>
     )
   }

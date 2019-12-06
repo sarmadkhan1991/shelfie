@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
@@ -11,4 +13,25 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.header {
+  height: 50px;
+  background-color: red;
+  padding-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-container{
+  height: 90vh;
+  width: 85vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.product-containter{
+  background-color: red;
 }

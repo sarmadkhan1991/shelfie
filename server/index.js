@@ -14,7 +14,11 @@ massive(CONNECTION_STRING).then(db => {
 
 app.get('/api/inventory', pc.getAll);
 
+app.post('/api/product', pc.post);
 
+app.delete('/api/product/:id', pc.delete);
+
+app.put('/api/product/:id', pc.update);
 
 
 
